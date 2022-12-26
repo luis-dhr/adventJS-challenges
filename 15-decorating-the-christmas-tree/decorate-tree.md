@@ -4,7 +4,7 @@ A couple is putting up the Christmas tree. The boy loves Christmas decorations a
 
 - Colored balls: `B`
 - Small gifts: `R`
--Pine cones: `P`
+- Pine cones: `P`
 
 The Christmas tree is a triangle that must be generated. They already have the base mounted, which would be the first row, and from there they have to **place the decorations upwards following a formula**.
 
