@@ -23,7 +23,7 @@ dryNumber(2, 20) // [2, 12, 20]
 // 2, 12, 20
 ```
 
-**Keep in mind that**:
+### Keep in mind that:
 
 - The number we don't have ink for can only be between 0 and 9.
 - The number we don't have ink for can be in any position of the barcode.
