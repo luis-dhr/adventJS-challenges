@@ -1,40 +1,24 @@
 export function howManyReindeers (reindeerTypes, gifts) {
-  return []
+  return gifts.map((gift) => {
+    let max = gift.weight
+    const reindeers = reindeerTypes
+      .filter((reindeer) => reindeer.weightCapacity < max)
+      .map((reindeer) => [reindeer.type, reindeer.weightCapacity])
+      .sort((a, b) => a[1] - b[1])
+
+    const result = reindeers.map(([type]) => ({ type, num: 0 }))
+
+    reindeers.forEach((_, i) => {
+      const sliced = reindeers.slice(0, reindeers.length - i)
+      const total = sliced.reduce((acc, [_, weight]) => acc + weight, 0)
+
+      sliced.forEach((_, j) => {
+        result[j].num += Math.floor(max / total)
+      })
+
+      max %= total
+    })
+
+    return { country: gift.country, reindeers: result.reverse() }
+  })
 }
-
-const reindeerTypes = [
-  { type: 'Nuclear', weightCapacity: 50 },
-  { type: 'Electric', weightCapacity: 10 },
-  { type: 'Gasoline', weightCapacity: 5 },
-  { type: 'Diesel', weightCapacity: 1 }
-]
-
-const gifts = [
-  { country: 'Spain', weight: 30 },
-  { country: 'France', weight: 17 },
-  { country: 'Italy', weight: 50 }
-]
-
-howManyReindeers(reindeerTypes, gifts)
-// [{
-//   country: 'Spain',
-//   reindeers: [
-//     { type: 'Electric', num: 1 },
-//     { type: 'Gasoline', num: 3 },
-//     { type: 'Diesel', num: 5 }
-//   ]
-// }, {
-//   country: 'France',
-//   reindeers: [
-//     { type: 'Electric', num: 1 },
-//     { type: 'Gasoline', num: 1 },
-//     { type: 'Diesel', num: 2 }
-//   ]
-//  }, {
-//   country: 'Italy',
-//   reindeers: [
-//     { type: 'Electric', num: 3 },
-//     { type: 'Gasoline', num: 3 },
-//     { type: 'Diesel', num: 5 }
-//   ]
-// }]
