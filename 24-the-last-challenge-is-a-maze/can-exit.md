@@ -6,7 +6,7 @@ It's the day! Today we're going to deliver gifts… but the warehouses are a maz
 
 Mazes have the following positions:
 
-`W`: It's a wall, you can't pass through there. `S`: Entry point to the warehouse. `E`: Exit point from the warehouse. ``: White spaces are where you can pass through.
+`W`: It's a wall, you can't pass through there. `S`: Entry point to the warehouse. `E`: Exit point from the warehouse. ` `: White spaces are where you can pass through.
 
 Valid movements are from one position up, down, left, or right. You can't move diagonally.
 
