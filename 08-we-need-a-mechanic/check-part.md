@@ -4,7 +4,7 @@ Some electric sleds have broken down and the elves are looking for spare parts t
 
 The spare parts are strings and the mechanic Elfon Masc has said that a spare part is valid **if the part can be a palindrome after removing, at most, one character**.
 
-***A palindrome is a word or phrase that reads the same from left to right as it does from right to left***.
+*A palindrome is a word or phrase that reads the same from left to right as it does from right to left*.
 
 Our function should return a boolean that indicates whether the spare part is valid or not with that rule:
 
